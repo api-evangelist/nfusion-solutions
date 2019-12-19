@@ -1,0 +1,841 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "version": "",
+        "title": "nFusion Solutions Market Data API v1",
+        "description": "nFusion Solutions provides REST and streaming APIs that deliver enterprise-grade financial data. Data sets include real-time and historical pricing for Spot prices of precious metals such as Gold, Silver, Platinum, and Palladium, exchange rates for major currency pairs, exchange rates for Crypto Currencies such as BTC, ETH, and LTC. All API access requires authentication. In order to be issued access credentials you must first enter into a service agreement with nFusion Solutions and acquire a commercial license. For information on how to obtain a licence contact sales@nfusionsolutions.com.",
+        "termsOfService": ""
+    },
+    "servers": [
+        "httpsapi.nfusionsolutions.biz\/"
+    ],
+    "paths": {
+        "\/api\/v{version}\/Currencies\/rate\/supported": {
+            "get": {
+                "summary": "Get list of currencies supported by the rate endpoint",
+                "description": "Any of the currencies in this list can be paired with any other currency in this list when supplied to the Rate endpoint.\r\nFor example: USD\/CAD,CAD\/USD,USD\/EUR,EUR\/CAD",
+                "operationId": "ApiV{versionCurrenciesRateSupportedGet",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "query",
+                        "description": "auth token"
+                    },
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "description": "to override content negotiation specify a value of json or xml"
+                    },
+                    {
+                        "name": "version",
+                        "in": "path",
+                        "description": "The requested API version"
+                    }
+                ]
+            }
+        },
+        "\/api\/v{version}\/Currencies\/summary\/supported": {
+            "get": {
+                "summary": "Get list of currency pairs supported by the Summary endpoint",
+                "description": "Only the currency pairs in the direction noted can be used with the Summary endpoint.\r\nFor example: USD\/CAD is not the same as CAD\/USD",
+                "operationId": "ApiV{versionCurrenciesSummarySupportedGet",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "query",
+                        "description": "auth token"
+                    },
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "description": "to override content negotiation specify a value of json or xml"
+                    },
+                    {
+                        "name": "version",
+                        "in": "path",
+                        "description": "The requested API version"
+                    }
+                ]
+            }
+        },
+        "\/api\/v{version}\/Currencies\/history\/supported": {
+            "get": {
+                "summary": "Get list of currency pairs supported by the history endpoint",
+                "description": "Only the currency pairs in the direction noted can be used with the history endpoint.\r\nFor example: USD\/CAD is not the same as CAD\/USD",
+                "operationId": "ApiV{versionCurrenciesHistorySupportedGet",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "query",
+                        "description": "auth token"
+                    },
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "description": "to override content negotiation specify a value of json or xml"
+                    },
+                    {
+                        "name": "version",
+                        "in": "path",
+                        "description": "The requested API version"
+                    }
+                ]
+            }
+        },
+        "\/api\/v{version}\/Currencies\/rate": {
+            "get": {
+                "summary": "Get latest mid rate for requested currency pairs",
+                "description": "Get latest mid rate for requested currency pairs.",
+                "operationId": "ApiV{versionCurrenciesRateGet",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "query",
+                        "description": "auth token"
+                    },
+                    {
+                        "name": "pairs",
+                        "in": "query",
+                        "description": "comma separated list of currency pairs. For example: USD\/CAD,USD\/EUR,USD\/AUD"
+                    },
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "description": "to override content negotiation specify a value of json or xml"
+                    },
+                    {
+                        "name": "version",
+                        "in": "path",
+                        "description": "The requested API version"
+                    }
+                ]
+            }
+        },
+        "\/api\/v{version}\/Currencies\/summary": {
+            "get": {
+                "summary": "Get latest Summary for requested currency pairs",
+                "description": "Current and daily summary information combined into a single quote",
+                "operationId": "ApiV{versionCurrenciesSummaryGet",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "query",
+                        "description": "auth token"
+                    },
+                    {
+                        "name": "pairs",
+                        "in": "query",
+                        "description": "comma separated list of currency pairs. For example: USD\/CAD,USD\/EUR,USD\/AUD"
+                    },
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "description": "to override content negotiation specify a value of json or xml"
+                    },
+                    {
+                        "name": "version",
+                        "in": "path",
+                        "description": "The requested API version"
+                    }
+                ]
+            }
+        },
+        "\/api\/v{version}\/Currencies\/history": {
+            "get": {
+                "summary": "Get historical prices for requested currency pairs",
+                "description": "Historical OHLC data for the specified period and interval size\r\n\r\nThe combination of the interval parameter and start and end dates can result in results\r\nbeing truncated to conform to result size limits. See comments on interval parameter for details on valid interval values.",
+                "operationId": "ApiV{versionCurrenciesHistoryGet",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "query",
+                        "description": "auth token"
+                    },
+                    {
+                        "name": "pairs",
+                        "in": "query",
+                        "description": "comma separated list of currency pairs. For example: USD\/CAD,USD\/EUR,USD\/AUD"
+                    },
+                    {
+                        "name": "start",
+                        "in": "query",
+                        "description": "start date of time period. format is <i>yyyy-mm-dd<\/i>"
+                    },
+                    {
+                        "name": "end",
+                        "in": "query",
+                        "description": "end date of time period. format is <i>yyyy-mm-dd<\/i>. Default is current date."
+                    },
+                    {
+                        "name": "interval",
+                        "in": "query",
+                        "description": "aggregation interval. Composed of an optional integer value (which defaults to 1 when not specified), \r\nfollowed by a type string which must be one of the following values:\r\ny=year,\r\nm=month,\r\nw=week,\r\nd=day,\r\nh=hour,\r\nmi=minute\r\n\r\nFor example, a yearly interval can be specified as \"y\" and 6 month interval as \"6m\". \r\n\r\nIf not specified the interval parameter default is 1 Day."
+                    },
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "description": "to override content negotiation specify a value of json or xml"
+                    },
+                    {
+                        "name": "version",
+                        "in": "path",
+                        "description": "The requested API version"
+                    }
+                ]
+            }
+        },
+        "\/api\/v{version}\/Metals\/supported\/currency": {
+            "get": {
+                "summary": "Get list of currencies supported by metals endpoints for currency conversion",
+                "description": "Get list of currencies supported by metals endpoints for currency conversion.",
+                "operationId": "ApiV{versionMetalsSupportedCurrencyGet",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "query",
+                        "description": "auth token"
+                    },
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "description": "to override content negotiation specify a value of json or xml"
+                    },
+                    {
+                        "name": "version",
+                        "in": "path",
+                        "description": "The requested API version"
+                    }
+                ]
+            }
+        },
+        "\/api\/v{version}\/Metals\/spot\/supported": {
+            "get": {
+                "summary": "Get list of symbols supported by the spot endpoints",
+                "description": "Get list of symbols supported by the spot endpoints.",
+                "operationId": "ApiV{versionMetalsSpotSupportedGet",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "query",
+                        "description": "auth token"
+                    },
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "description": "to override content negotiation specify a value of json or xml"
+                    },
+                    {
+                        "name": "version",
+                        "in": "path",
+                        "description": "The requested API version"
+                    }
+                ]
+            }
+        },
+        "\/api\/v{version}\/Metals\/spot\/summary": {
+            "get": {
+                "summary": "Get latest Spot Summary for requested metals",
+                "description": "Current and daily summary information combined into a single quote",
+                "operationId": "ApiV{versionMetalsSpotSummaryGet",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "query",
+                        "description": "auth token"
+                    },
+                    {
+                        "name": "metals",
+                        "in": "query",
+                        "description": "comma separated list of metals"
+                    },
+                    {
+                        "name": "currency",
+                        "in": "query",
+                        "description": "comma separated list of conversion currencies, defaults to USD"
+                    },
+                    {
+                        "name": "unitofmeasure",
+                        "in": "query",
+                        "description": "unit of meaure, defaults to troy ounces. allowed values are:\r\nmg=milligram\r\ng=gram\r\nkg=kilogram\r\ngr=grain\r\noz=ounce\r\ntoz=troy ounce\r\nct=carat\r\ndwt=pennyweight"
+                    },
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "description": "to override content negotiation specify a value of json or xml"
+                    },
+                    {
+                        "name": "adjust",
+                        "in": "query",
+                        "description": "apply global and per-tenant spot price adjustments. Defaults to true."
+                    },
+                    {
+                        "name": "version",
+                        "in": "path",
+                        "description": "The requested API version"
+                    }
+                ]
+            }
+        },
+        "\/api\/v{version}\/Metals\/spot\/history": {
+            "get": {
+                "summary": "Get historical Spot prices for requested metals",
+                "description": "Historical OHLC data for the specified period and interval size\r\n\r\nThe combination of the interval parameter and start and end dates can result in results\r\nbeing truncated to conform to result size limits. See comments on interval parameter for details on valid interval values.\r\n\r\nThe historicalfx flag is used to determine whether to apply today's fx rates to a historical period, or to apply the historical rates from that same time frame.",
+                "operationId": "ApiV{versionMetalsSpotHistoryGet",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "query",
+                        "description": "auth token"
+                    },
+                    {
+                        "name": "metals",
+                        "in": "query",
+                        "description": "comma separated list of metals"
+                    },
+                    {
+                        "name": "start",
+                        "in": "query",
+                        "description": "start date of time period. format is <i>yyyy-mm-dd<\/i>"
+                    },
+                    {
+                        "name": "end",
+                        "in": "query",
+                        "description": "end date of time period. format is <i>yyyy-mm-dd<\/i>. Default is current date."
+                    },
+                    {
+                        "name": "interval",
+                        "in": "query",
+                        "description": "aggregation interval. Composed of an optional integer value (which defaults to 1 when not specified), \r\nfollowed by a type string which must be one of the following values:\r\ny=year,\r\nm=month,\r\nw=week,\r\nd=day,\r\nh=hour,\r\nmi=minute\r\n\r\nFor example, a yearly interval can be specified as \"y\" and 6 month interval as \"6m\". \r\n\r\nIf not specified the interval parameter default is 1 Day."
+                    },
+                    {
+                        "name": "historicalfx",
+                        "in": "query",
+                        "description": "if true use historical currency rates otherwise current currency rates. Defaults to false."
+                    },
+                    {
+                        "name": "currency",
+                        "in": "query",
+                        "description": "comma separated list of conversion currencies, defaults to USD"
+                    },
+                    {
+                        "name": "unitofmeasure",
+                        "in": "query",
+                        "description": "unit of meaure, defaults to troy ounces. allowed values are:\r\nmg=milligram\r\ng=gram\r\nkg=kilogram\r\ngr=grain\r\noz=ounce\r\ntoz=troy ounce\r\nct=carat\r\ndwt=pennyweight"
+                    },
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "description": "to override content negotiation specify a value of json or xml"
+                    },
+                    {
+                        "name": "version",
+                        "in": "path",
+                        "description": "The requested API version"
+                    }
+                ]
+            }
+        },
+        "\/api\/v{version}\/Metals\/spot\/ratio\/summary": {
+            "get": {
+                "summary": "Get latest Spot Summary for requested metal ratios",
+                "description": "Get latest spot summary for requested metal ratios.",
+                "operationId": "ApiV{versionMetalsSpotRatioSummaryGet",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "query",
+                        "description": "auth token"
+                    },
+                    {
+                        "name": "pairs",
+                        "in": "query",
+                        "description": "comma separated list of currency pairs. For example: USD\/CAD,USD\/EUR,USD\/AUD"
+                    },
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "description": "to override content negotiation specify a value of json or xml"
+                    },
+                    {
+                        "name": "version",
+                        "in": "path",
+                        "description": "The requested API version"
+                    }
+                ]
+            }
+        },
+        "\/api\/v{version}\/Metals\/spot\/ratio\/history": {
+            "get": {
+                "summary": "Get historical Spot Ratio prices for requested metals",
+                "description": "Historical data for the specified period and interval size\r\n\r\nThe combination of the interval parameter and start and end dates can result in results\r\nbeing truncated to conform to result size limits. See comments on interval parameter for details on valid interval values.",
+                "operationId": "ApiV{versionMetalsSpotRatioHistoryGet",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "query",
+                        "description": "auth token"
+                    },
+                    {
+                        "name": "pairs",
+                        "in": "query",
+                        "description": "comma separated list of currency pairs. For example: USD\/CAD,USD\/EUR,USD\/AUD"
+                    },
+                    {
+                        "name": "start",
+                        "in": "query",
+                        "description": "start date of time period. format is <i>yyyy-mm-dd<\/i>"
+                    },
+                    {
+                        "name": "end",
+                        "in": "query",
+                        "description": "end date of time period. format is <i>yyyy-mm-dd<\/i>. Default is current date."
+                    },
+                    {
+                        "name": "interval",
+                        "in": "query",
+                        "description": "aggregation interval. Composed of an optional integer value (which defaults to 1 when not specified), \r\nfollowed by a type string which must be one of the following values:\r\ny=year,\r\nm=month,\r\nw=week,\r\nd=day,\r\nh=hour,\r\nmi=minute\r\n\r\nFor example, a yearly interval can be specified as \"y\" and 6 month interval as \"6m\". \r\n\r\nIf not specified the interval parameter default is 1 Day."
+                    },
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "description": "to override content negotiation specify a value of json or xml"
+                    },
+                    {
+                        "name": "version",
+                        "in": "path",
+                        "description": "The requested API version"
+                    }
+                ]
+            }
+        },
+        "\/api\/v{version}\/Metals\/benchmark\/supported": {
+            "get": {
+                "summary": "Get list of symbols supported by the benchmark endpoints",
+                "description": "Get list of symbols supported by the benchmark endpoints.",
+                "operationId": "ApiV{versionMetalsBenchmarkSupportedGet",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "query",
+                        "description": "auth token"
+                    },
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "description": "to override content negotiation specify a value of json or xml"
+                    },
+                    {
+                        "name": "version",
+                        "in": "path",
+                        "description": "The requested API version"
+                    }
+                ]
+            }
+        },
+        "\/api\/v{version}\/Metals\/benchmark\/summary": {
+            "get": {
+                "summary": "Get latest Benchmark prices for requested metals",
+                "description": "Get latest benchmark prices for requested metals.",
+                "operationId": "ApiV{versionMetalsBenchmarkSummaryGet",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "query",
+                        "description": "auth token"
+                    },
+                    {
+                        "name": "metals",
+                        "in": "query",
+                        "description": "comma separated list of metals"
+                    },
+                    {
+                        "name": "currency",
+                        "in": "query",
+                        "description": "comma separated list of conversion currencies, defaults to USD"
+                    },
+                    {
+                        "name": "unitofmeasure",
+                        "in": "query",
+                        "description": "unit of meaure, defaults to troy ounces. allowed values are:\r\nmg=milligram\r\ng=gram\r\nkg=kilogram\r\ngr=grain\r\noz=ounce\r\ntoz=troy ounce\r\nct=carat\r\ndwt=pennyweight"
+                    },
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "description": "to override content negotiation specify a value of json or xml"
+                    },
+                    {
+                        "name": "version",
+                        "in": "path",
+                        "description": "The requested API version"
+                    }
+                ]
+            }
+        },
+        "\/api\/v{version}\/Metals\/benchmark\/history": {
+            "get": {
+                "summary": "Get historical benchmark prices for requested metals",
+                "description": "Historical OHLC data for the specified period and interval size\r\n\r\nThe combination of the interval parameter and start and end dates can result in results\r\nbeing truncated to conform to result size limits. See comments on interval parameter for details on valid interval values.\r\n\r\nThe historicalfx flag is used to determine whether to apply today's fx rates to a historical period, or to apply the historical rates from that same time frame.",
+                "operationId": "ApiV{versionMetalsBenchmarkHistoryGet",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "query",
+                        "description": "auth token"
+                    },
+                    {
+                        "name": "metals",
+                        "in": "query",
+                        "description": "comma separated list of metals"
+                    },
+                    {
+                        "name": "start",
+                        "in": "query",
+                        "description": "start date of time period. format is <i>yyyy-mm-dd<\/i>"
+                    },
+                    {
+                        "name": "end",
+                        "in": "query",
+                        "description": "end date of time period. format is <i>yyyy-mm-dd<\/i>. Default is current date."
+                    },
+                    {
+                        "name": "interval",
+                        "in": "query",
+                        "description": "aggregation interval. Composed of an optional integer value (which defaults to 1 when not specified), \r\nfollowed by a type string which must be one of the following values:\r\ny=year,\r\nm=month,\r\nw=week,\r\nd=day,\r\nh=hour,\r\nmi=minute\r\n\r\nFor example, a yearly interval can be specified as \"y\" and 6 month interval as \"6m\". \r\n\r\nIf not specified the interval parameter default is 1 Day."
+                    },
+                    {
+                        "name": "historicalfx",
+                        "in": "query",
+                        "description": "if true use historical currency rates otherwise current currency rates. Defaults to false."
+                    },
+                    {
+                        "name": "currency",
+                        "in": "query",
+                        "description": "comma separated list of conversion currencies, defaults to USD"
+                    },
+                    {
+                        "name": "unitofmeasure",
+                        "in": "query",
+                        "description": "unit of meaure, defaults to troy ounces. allowed values are:\r\nmg=milligram\r\ng=gram\r\nkg=kilogram\r\ngr=grain\r\noz=ounce\r\ntoz=troy ounce\r\nct=carat\r\ndwt=pennyweight"
+                    },
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "description": "to override content negotiation specify a value of json or xml"
+                    },
+                    {
+                        "name": "version",
+                        "in": "path",
+                        "description": "The requested API version"
+                    }
+                ]
+            }
+        },
+        "\/api\/v{version}\/Metals\/spot\/performance\/annual": {
+            "get": {
+                "summary": "Get Historical Annual Performance for requested metals",
+                "description": "Get historical annual performance for requested metals.",
+                "operationId": "ApiV{versionMetalsSpotPerformanceAnnualGet",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "query",
+                        "description": "auth token"
+                    },
+                    {
+                        "name": "metals",
+                        "in": "query",
+                        "description": "comma separated list of metals"
+                    },
+                    {
+                        "name": "currency",
+                        "in": "query",
+                        "description": "comma separated list of conversion currencies, defaults to USD"
+                    },
+                    {
+                        "name": "unitofmeasure",
+                        "in": "query",
+                        "description": "unit of meaure, defaults to troy ounces. allowed values are:\r\nmg=milligram\r\ng=gram\r\nkg=kilogram\r\ngr=grain\r\noz=ounce\r\ntoz=troy ounce\r\nct=carat\r\ndwt=pennyweight"
+                    },
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "description": "to override content negotiation specify a value of json or xml"
+                    },
+                    {
+                        "name": "years",
+                        "in": "query",
+                        "description": "Number of years of history to return. Defaults to 10."
+                    },
+                    {
+                        "name": "version",
+                        "in": "path",
+                        "description": "The requested API version"
+                    }
+                ]
+            }
+        },
+        "\/api\/v{version}\/Metals\/spot\/performance": {
+            "get": {
+                "summary": "Get Historical Performance for requested metals",
+                "description": "Get historical performance for requested metals.",
+                "operationId": "ApiV{versionMetalsSpotPerformanceGet",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "query",
+                        "description": "auth token"
+                    },
+                    {
+                        "name": "metals",
+                        "in": "query",
+                        "description": "comma separated list of metals"
+                    },
+                    {
+                        "name": "currency",
+                        "in": "query",
+                        "description": "comma separated list of conversion currencies, defaults to USD"
+                    },
+                    {
+                        "name": "unitofmeasure",
+                        "in": "query",
+                        "description": "unit of meaure, defaults to troy ounces. allowed values are:\r\nmg=milligram\r\ng=gram\r\nkg=kilogram\r\ngr=grain\r\noz=ounce\r\ntoz=troy ounce\r\nct=carat\r\ndwt=pennyweight"
+                    },
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "description": "to override content negotiation specify a value of json or xml"
+                    },
+                    {
+                        "name": "version",
+                        "in": "path",
+                        "description": "The requested API version"
+                    }
+                ]
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Response[Rate]": {
+                "type": "object",
+                "properties": {
+                    "requestedSymbol": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "requestedCurrency": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "requestedUnitOfMeasure": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "success": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "error": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "Rate": {
+                "type": "object",
+                "properties": {
+                    "symbol": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "value": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "timestamp": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "Response[Summary]": {
+                "type": "object",
+                "properties": {
+                    "requestedSymbol": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "requestedCurrency": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "requestedUnitOfMeasure": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "success": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "error": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "Summary": {
+                "type": "object",
+                "properties": {
+                    "symbol": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "baseCurrency": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "last": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "bid": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "ask": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "high": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "low": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "open": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "oneDayValue": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "oneDayChange": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "oneDayPercentChange": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "timestamp": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "Response[IntervalCollection]": {
+                "type": "object",
+                "properties": {
+                    "requestedSymbol": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "requestedCurrency": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "requestedUnitOfMeasure": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "success": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "error": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "IntervalCollection": {
+                "type": "object",
+                "properties": {
+                    "symbol": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "name": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "baseCurrency": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "intervals": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "Interval": {
+                "type": "object",
+                "properties": {
+                    "start": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "end": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "open": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "high": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "low": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "last": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "change": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "changePercent": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            }
+        }
+    }
+}
