@@ -1,5 +1,5 @@
 {
-    "id": "226cf1263fd185399ba9c5a043f6f64a",
+    "id": "1282269e90d0228d4ba54ff74a7bf507",
     "name": "nFusion Solutions Market Data API v1",
     "description": null,
     "auth": null,
@@ -10,7 +10,7 @@
     "folders": [],
     "requests": [
         {
-            "id": "22d9571ca025e8e9800c0208cf42d7c2",
+            "id": "f932b6744d379a5e16955f8d2e0067e9",
             "name": "Get list of currencies supported by the rate endpoint",
             "url": "httpsapi.nfusionsolutions.biz\/\/api\/v{version}\/Currencies\/rate\/supported",
             "description": "Any of the currencies in this list can be paired with any other currency in this list when supplied to the Rate endpoint.\r\nFor example: USD\/CAD,CAD\/USD,USD\/EUR,EUR\/CAD",
@@ -51,11 +51,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "226cf1263fd185399ba9c5a043f6f64a",
+            "collectionId": "1282269e90d0228d4ba54ff74a7bf507",
             "rawModeData": ""
         },
         {
-            "id": "e722691ef7b3eea998de04583ee2e089",
+            "id": "25293a137b4b2c4b5874fb76a303947f",
             "name": "Get list of currency pairs supported by the Summary endpoint",
             "url": "httpsapi.nfusionsolutions.biz\/\/api\/v{version}\/Currencies\/summary\/supported",
             "description": "Only the currency pairs in the direction noted can be used with the Summary endpoint.\r\nFor example: USD\/CAD is not the same as CAD\/USD",
@@ -96,11 +96,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "226cf1263fd185399ba9c5a043f6f64a",
+            "collectionId": "1282269e90d0228d4ba54ff74a7bf507",
             "rawModeData": ""
         },
         {
-            "id": "f6788693b109b73cb1cdd6c6da1e42ec",
+            "id": "d6a15d88dc8b7c0c41c16fc2c3eb9e83",
             "name": "Get list of currency pairs supported by the history endpoint",
             "url": "httpsapi.nfusionsolutions.biz\/\/api\/v{version}\/Currencies\/history\/supported",
             "description": "Only the currency pairs in the direction noted can be used with the history endpoint.\r\nFor example: USD\/CAD is not the same as CAD\/USD",
@@ -141,11 +141,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "226cf1263fd185399ba9c5a043f6f64a",
+            "collectionId": "1282269e90d0228d4ba54ff74a7bf507",
             "rawModeData": ""
         },
         {
-            "id": "ab9b6591a8676665a39480bdd7b03db6",
+            "id": "df023228c628c21ff734d98676533f1f",
             "name": "Get latest mid rate for requested currency pairs",
             "url": "httpsapi.nfusionsolutions.biz\/\/api\/v{version}\/Currencies\/rate",
             "description": "Get latest mid rate for requested currency pairs.",
@@ -193,11 +193,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "226cf1263fd185399ba9c5a043f6f64a",
+            "collectionId": "1282269e90d0228d4ba54ff74a7bf507",
             "rawModeData": ""
         },
         {
-            "id": "0cbcfd60ae9913a2eaeb450e0ceec054",
+            "id": "061a22ce2ac8c1d769b000af3f5f348e",
             "name": "Get latest Summary for requested currency pairs",
             "url": "httpsapi.nfusionsolutions.biz\/\/api\/v{version}\/Currencies\/summary",
             "description": "Current and daily summary information combined into a single quote",
@@ -245,11 +245,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "226cf1263fd185399ba9c5a043f6f64a",
+            "collectionId": "1282269e90d0228d4ba54ff74a7bf507",
             "rawModeData": ""
         },
         {
-            "id": "30035fdeda711549e47e30b57d5d89c5",
+            "id": "fb14b9537f78e4c7027818b5671bb725",
             "name": "Get historical prices for requested currency pairs",
             "url": "httpsapi.nfusionsolutions.biz\/\/api\/v{version}\/Currencies\/history",
             "description": "Historical OHLC data for the specified period and interval size\r\n\r\nThe combination of the interval parameter and start and end dates can result in results\r\nbeing truncated to conform to result size limits. See comments on interval parameter for details on valid interval values.",
@@ -318,11 +318,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "226cf1263fd185399ba9c5a043f6f64a",
+            "collectionId": "1282269e90d0228d4ba54ff74a7bf507",
             "rawModeData": ""
         },
         {
-            "id": "031950617b5d78755bf66994e1e4b16e",
+            "id": "6c655fce2eb305919cc815f35e02e2fa",
             "name": "Get list of currencies supported by metals endpoints for currency conversion",
             "url": "httpsapi.nfusionsolutions.biz\/\/api\/v{version}\/Metals\/supported\/currency",
             "description": "Get list of currencies supported by metals endpoints for currency conversion.",
@@ -363,11 +363,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "226cf1263fd185399ba9c5a043f6f64a",
+            "collectionId": "1282269e90d0228d4ba54ff74a7bf507",
             "rawModeData": ""
         },
         {
-            "id": "60dada917ee3bacb64f0911090886ce0",
+            "id": "a9f75bc30c894b8055a88f1e9d60ef3e",
             "name": "Get list of symbols supported by the spot endpoints",
             "url": "httpsapi.nfusionsolutions.biz\/\/api\/v{version}\/Metals\/spot\/supported",
             "description": "Get list of symbols supported by the spot endpoints.",
@@ -408,11 +408,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "226cf1263fd185399ba9c5a043f6f64a",
+            "collectionId": "1282269e90d0228d4ba54ff74a7bf507",
             "rawModeData": ""
         },
         {
-            "id": "e6aa9f11b938c9669c6452094bfdf9a0",
+            "id": "0a761ed8141a9b096b9aa19af468545f",
             "name": "Get latest Spot Summary for requested metals",
             "url": "httpsapi.nfusionsolutions.biz\/\/api\/v{version}\/Metals\/spot\/summary",
             "description": "Current and daily summary information combined into a single quote",
@@ -481,11 +481,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "226cf1263fd185399ba9c5a043f6f64a",
+            "collectionId": "1282269e90d0228d4ba54ff74a7bf507",
             "rawModeData": ""
         },
         {
-            "id": "3876d8ece273f0bc6eef6fb756a0d5a0",
+            "id": "a56dcbf91f679758ec0b895c1bb3ad77",
             "name": "Get historical Spot prices for requested metals",
             "url": "httpsapi.nfusionsolutions.biz\/\/api\/v{version}\/Metals\/spot\/history",
             "description": "Historical OHLC data for the specified period and interval size\r\n\r\nThe combination of the interval parameter and start and end dates can result in results\r\nbeing truncated to conform to result size limits. See comments on interval parameter for details on valid interval values.\r\n\r\nThe historicalfx flag is used to determine whether to apply today's fx rates to a historical period, or to apply the historical rates from that same time frame.",
@@ -575,11 +575,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "226cf1263fd185399ba9c5a043f6f64a",
+            "collectionId": "1282269e90d0228d4ba54ff74a7bf507",
             "rawModeData": ""
         },
         {
-            "id": "99b50efe5eb15c462614612587b3dca7",
+            "id": "20e173be3ff6eaf1bd1b3e8990b07d74",
             "name": "Get latest Spot Summary for requested metal ratios",
             "url": "httpsapi.nfusionsolutions.biz\/\/api\/v{version}\/Metals\/spot\/ratio\/summary",
             "description": "Get latest spot summary for requested metal ratios.",
@@ -627,11 +627,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "226cf1263fd185399ba9c5a043f6f64a",
+            "collectionId": "1282269e90d0228d4ba54ff74a7bf507",
             "rawModeData": ""
         },
         {
-            "id": "852af56b65915a4cb9a40be9faa589f7",
+            "id": "609d957c7dec8550e96a14b7ac2828b8",
             "name": "Get historical Spot Ratio prices for requested metals",
             "url": "httpsapi.nfusionsolutions.biz\/\/api\/v{version}\/Metals\/spot\/ratio\/history",
             "description": "Historical data for the specified period and interval size\r\n\r\nThe combination of the interval parameter and start and end dates can result in results\r\nbeing truncated to conform to result size limits. See comments on interval parameter for details on valid interval values.",
@@ -700,11 +700,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "226cf1263fd185399ba9c5a043f6f64a",
+            "collectionId": "1282269e90d0228d4ba54ff74a7bf507",
             "rawModeData": ""
         },
         {
-            "id": "46f2487f447f806803bbefa704f7cb8e",
+            "id": "8f2a34c88184f8f6e7e2d5027e9463bf",
             "name": "Get list of symbols supported by the benchmark endpoints",
             "url": "httpsapi.nfusionsolutions.biz\/\/api\/v{version}\/Metals\/benchmark\/supported",
             "description": "Get list of symbols supported by the benchmark endpoints.",
@@ -745,11 +745,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "226cf1263fd185399ba9c5a043f6f64a",
+            "collectionId": "1282269e90d0228d4ba54ff74a7bf507",
             "rawModeData": ""
         },
         {
-            "id": "71162424d997f55fa1440cd8e9e829bd",
+            "id": "907df4e466a210ea34293d19213aa050",
             "name": "Get latest Benchmark prices for requested metals",
             "url": "httpsapi.nfusionsolutions.biz\/\/api\/v{version}\/Metals\/benchmark\/summary",
             "description": "Get latest benchmark prices for requested metals.",
@@ -811,11 +811,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "226cf1263fd185399ba9c5a043f6f64a",
+            "collectionId": "1282269e90d0228d4ba54ff74a7bf507",
             "rawModeData": ""
         },
         {
-            "id": "d3a7452123bd74fd26656a5b9d909ded",
+            "id": "0ea7de45e96be1c4468a223a2dd61bd4",
             "name": "Get historical benchmark prices for requested metals",
             "url": "httpsapi.nfusionsolutions.biz\/\/api\/v{version}\/Metals\/benchmark\/history",
             "description": "Historical OHLC data for the specified period and interval size\r\n\r\nThe combination of the interval parameter and start and end dates can result in results\r\nbeing truncated to conform to result size limits. See comments on interval parameter for details on valid interval values.\r\n\r\nThe historicalfx flag is used to determine whether to apply today's fx rates to a historical period, or to apply the historical rates from that same time frame.",
@@ -905,11 +905,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "226cf1263fd185399ba9c5a043f6f64a",
+            "collectionId": "1282269e90d0228d4ba54ff74a7bf507",
             "rawModeData": ""
         },
         {
-            "id": "7ae93a47a157cd4bd3ef697119937e0c",
+            "id": "b0369650a516a483cb55f7aedcf0d0ae",
             "name": "Get Historical Annual Performance for requested metals",
             "url": "httpsapi.nfusionsolutions.biz\/\/api\/v{version}\/Metals\/spot\/performance\/annual",
             "description": "Get historical annual performance for requested metals.",
@@ -978,11 +978,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "226cf1263fd185399ba9c5a043f6f64a",
+            "collectionId": "1282269e90d0228d4ba54ff74a7bf507",
             "rawModeData": ""
         },
         {
-            "id": "e6803e12c5d758fd99968e8e0eb8cebc",
+            "id": "63137a02b39475dcb42bb12d1ed2ce1d",
             "name": "Get Historical Performance for requested metals",
             "url": "httpsapi.nfusionsolutions.biz\/\/api\/v{version}\/Metals\/spot\/performance",
             "description": "Get historical performance for requested metals.",
@@ -1044,7 +1044,7 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "226cf1263fd185399ba9c5a043f6f64a",
+            "collectionId": "1282269e90d0228d4ba54ff74a7bf507",
             "rawModeData": ""
         }
     ]
